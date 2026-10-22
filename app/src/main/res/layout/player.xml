@@ -489,6 +489,10 @@
                 <org.schabi.newpipe.views.ChaptersSeekBar
                     android:id="@+id/playbackSeekBar"
                     style="@style/Widget.AppCompat.SeekBar"
+                    android:progressTint="#D9707A"
+                    android:progressBackgroundTint="#40FFFFFF"
+                    android:secondaryProgressTint="#66FFFFFF"
+                    android:thumbTint="@color/white"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
