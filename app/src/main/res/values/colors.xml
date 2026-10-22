@@ -49,6 +49,11 @@
     <color name="black_card_item_contrast_color">#222225</color>
     <color name="black_border_color">#25FFFFFF</color>
 
+    <!-- Tab pill / accent used by the redesigned tab bar -->
+    <color name="tab_indicator_color">#8E1B26</color>
+    <color name="dark_toolbar_background_color">#121214</color>
+    <color name="black_toolbar_background_color">#0A0A0B</color>
+
     <!-- Miscellaneous -->
     <color name="queue_background_color">@color/dark_queue_background_color</color>
     <color name="drawer_header_font_color">#F2FFFFFF</color>

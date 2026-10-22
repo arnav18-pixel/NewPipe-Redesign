@@ -4,8 +4,6 @@ import static android.widget.RelativeLayout.ABOVE;
 import static android.widget.RelativeLayout.ALIGN_PARENT_BOTTOM;
 import static android.widget.RelativeLayout.ALIGN_PARENT_TOP;
 import static android.widget.RelativeLayout.BELOW;
-import static com.google.android.material.tabs.TabLayout.INDICATOR_GRAVITY_BOTTOM;
-import static com.google.android.material.tabs.TabLayout.INDICATOR_GRAVITY_TOP;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -44,7 +42,6 @@ import org.schabi.newpipe.settings.tabs.Tab;
 import org.schabi.newpipe.settings.tabs.TabsManager;
 import org.schabi.newpipe.util.NavigationHelper;
 import org.schabi.newpipe.util.ServiceHelper;
-import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.views.ScrollableTabLayout;
 
 import java.util.ArrayList;
@@ -237,23 +234,20 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
         tabParams.addRule(bottom ? ALIGN_PARENT_BOTTOM : ALIGN_PARENT_TOP);
         pagerParams.removeRule(bottom ? BELOW : ABOVE);
         pagerParams.addRule(bottom ? ABOVE : BELOW, R.id.main_tab_layout);
-        tabLayout.setSelectedTabIndicatorGravity(
-                bottom ? INDICATOR_GRAVITY_TOP : INDICATOR_GRAVITY_BOTTOM);
+        tabLayout.setSelectedTabIndicatorGravity(TabLayout.INDICATOR_GRAVITY_STRETCH);
 
         tabLayout.setLayoutParams(tabParams);
         viewPager.setLayoutParams(pagerParams);
 
-        // change the background and icon color of the tab layout:
-        // service-colored at the top, app-background-colored at the bottom
-        tabLayout.setBackgroundColor(ThemeHelper.resolveColorFromAttr(requireContext(),
-                bottom ? android.R.attr.windowBackground : R.attr.colorPrimary));
+        // redesign: frosted-glass pill container with an oxblood selected-tab pill
+        tabLayout.setBackgroundResource(R.drawable.bg_glass_pill);
 
-        @ColorInt final int iconColor = bottom
-                ? ThemeHelper.resolveColorFromAttr(requireContext(), android.R.attr.colorAccent)
-                : Color.WHITE;
-        tabLayout.setTabRippleColor(ColorStateList.valueOf(iconColor).withAlpha(32));
+        @ColorInt final int iconColor = Color.WHITE;
+        tabLayout.setTabRippleColor(ColorStateList.valueOf(iconColor).withAlpha(51));
         tabLayout.setTabIconTint(ColorStateList.valueOf(iconColor));
-        tabLayout.setSelectedTabIndicatorColor(iconColor);
+        tabLayout.setSelectedTabIndicatorColor(
+                androidx.core.content.ContextCompat.getColor(requireContext(),
+                        R.color.tab_indicator_color));
     }
 
     @Override

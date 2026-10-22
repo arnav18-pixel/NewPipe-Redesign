@@ -29,6 +29,7 @@
         <item name="colorAccent">@color/light_youtube_accent_color</item>
         <item name="android:windowBackground">@color/light_background_color</item>
         <item name="windowBackground">@color/light_background_color</item>
+        <item name="toolbar_background_color">?attr/colorPrimary</item>
 
         <item name="separator_color">@color/light_separator_color</item>
         <item name="contrast_background_color">@color/light_contrast_background_color</item>
@@ -53,6 +54,8 @@
         <item name="colorAccent">@color/dark_youtube_accent_color</item>
         <item name="android:windowBackground">@color/dark_background_color</item>
         <item name="windowBackground">@color/dark_background_color</item>
+        <item name="colorPrimaryDark">@color/dark_toolbar_background_color</item>
+        <item name="toolbar_background_color">@color/dark_toolbar_background_color</item>
 
         <item name="separator_color">@color/dark_separator_color</item>
         <item name="contrast_background_color">@color/dark_contrast_background_color</item>
@@ -74,6 +77,8 @@
     <style name="Base.V21.BlackTheme" parent="DarkTheme">
         <item name="android:windowBackground">@color/black_background_color</item>
         <item name="windowBackground">@color/black_background_color</item>
+        <item name="colorPrimaryDark">@color/black_toolbar_background_color</item>
+        <item name="toolbar_background_color">@color/black_toolbar_background_color</item>
 
         <item name="separator_color">@color/black_separator_color</item>
         <item name="contrast_background_color">@color/black_contrast_background_color</item>
